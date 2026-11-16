@@ -27,9 +27,14 @@ ruff check . && ruff format --check .
 pytest
 ```
 
+## Configuration
+- Settings live in `app/config.py` (pydantic-settings), read from env vars and a local `.env`.
+- Secrets are typed as `SecretStr`; `.env.example` lists the expected variables.
+
 ## CI
 `.github/workflows/ci.yml` runs on every pull request and on push to `main`:
-Build (install + import check) -> Lint (ruff) -> Test (pytest).
+Security (gitleaks scan of full git history) -> Build (install + import check)
+-> Lint (ruff) -> Test (pytest).
 
 ## Workflow rules
 - Work is tracked on a GitHub Projects board with issues.
