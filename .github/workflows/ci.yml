@@ -1,4 +1,5 @@
-# CI pipeline: checks that the backend builds, follows the code style and passes the tests.
+# CI pipeline: checks that no secrets are committed, and that the backend builds,
+# follows the code style and passes the tests.
 # The name is shown in the "Actions" tab and on pull requests.
 name: CI
 
@@ -20,17 +21,36 @@ concurrency:
 
 jobs:
   ci:
-    name: Build, lint & test     # the check name shown on the PR
+    name: Secrets, build, lint & test   # the check name shown on the PR
     runs-on: ubuntu-latest       # GitHub starts a fresh Linux machine for every run
     steps:
       # Download the repo's code onto the machine.
+      # fetch-depth: 0 fetches the full git history, so gitleaks can scan every commit.
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      # SECURITY: scan the whole git history for committed secrets (API keys, passwords, tokens).
+      # The pipeline fails if anything is found. We use the gitleaks CLI directly, because
+      # gitleaks-action requires a paid license for organization repos.
+      # The download is verified against the official checksum file before it is used.
+      - name: Security - gitleaks secret scan
+        env:
+          GITLEAKS_VERSION: "8.30.1"
+        run: |
+          base="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}"
+          file="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          curl -sSfL -o "$file" "$base/$file"
+          curl -sSfL -o checksums.txt "$base/gitleaks_${GITLEAKS_VERSION}_checksums.txt"
+          grep " $file\$" checksums.txt | sha256sum --check -
+          tar -xzf "$file" gitleaks
+          ./gitleaks git --redact --verbose .
 
       # Install Python 3.13 and cache pip downloads, so later runs are faster.
       # The cache is rebuilt when a requirements file changes.
       - name: Set up Python 3.13
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
           cache: pip
