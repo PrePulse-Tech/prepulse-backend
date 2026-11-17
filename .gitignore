@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Allow synthetic log fixtures (no real data)
+!tests/fixtures/logs/*.log

@@ -1,0 +1,16 @@
+2026-11-17T12:16:12.453205+01:00 15 [Warning] [MY-010914] [Server] Aborted connection 1021 to db: 'shop' user: 'app' host: '192.0.2.10' (Got timeout reading communication packets)
+2026-11-17T12:16:16.042101+01:00 27 [Warning] [MY-010914] [Server] Aborted connection 1034 to db: 'shop' user: 'app' host: '192.0.2.10' (Got an error reading communication packets)
+2026-11-17T12:16:24.180192+01:00 27 [ERROR] [MY-010584] [Server] Too many connections
+2026-11-17T12:16:31.846848+01:00 58 [ERROR] [MY-013183] [InnoDB] Deadlock found when trying to get lock; try restarting transaction
+2026-11-17T12:16:38.119873+01:00 40 [Warning] [MY-010055] [Server] Slow query detected: SELECT * FROM orders WHERE status = 'open' (query time 12.4 s)
+2026-11-17T12:16:53.237243+01:00 32 [ERROR] [MY-010584] [Server] Too many connections
+2026-11-17T12:17:01.623252+01:00 36 [ERROR] [MY-012592] [InnoDB] Cannot allocate memory for the buffer pool
+2026-11-17T12:17:06.404719+01:00 57 [Warning] [MY-010914] [Server] Aborted connection 1021 to db: 'shop' user: 'app' host: '192.0.2.10' (Got timeout reading communication packets)
+2026-11-17T12:17:11.459753+01:00 57 [Warning] [MY-010914] [Server] Aborted connection 1034 to db: 'shop' user: 'app' host: '192.0.2.10' (Got an error reading communication packets)
+2026-11-17T12:17:24.801162+01:00 59 [ERROR] [MY-010584] [Server] Too many connections
+2026-11-17T12:17:29.739002+01:00 60 [ERROR] [MY-013183] [InnoDB] Deadlock found when trying to get lock; try restarting transaction
+2026-11-17T12:17:41.860706+01:00 23 [Warning] [MY-010055] [Server] Slow query detected: SELECT * FROM orders WHERE status = 'open' (query time 12.4 s)
+2026-11-17T12:17:45.620026+01:00 42 [ERROR] [MY-010584] [Server] Too many connections
+2026-11-17T12:17:52.568754+01:00 42 [ERROR] [MY-010584] [Server] Too many connections
+2026-11-17T12:18:05.395153+01:00 20 [ERROR] [MY-010584] [Server] Too many connections
+2026-11-17T12:18:17.084529+01:00 16 [ERROR] [MY-010584] [Server] Too many connections

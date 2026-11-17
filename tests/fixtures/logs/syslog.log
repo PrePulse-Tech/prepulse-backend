@@ -1,0 +1,19 @@
+Nov 17 12:22:00 web01 kernel: [884521.123456] Out of memory: Killed process 3140 (php-fpm8.2) total-vm:812344kB, anon-rss:402112kB
+Nov 17 12:22:02 web01 systemd[1]: php8.2-fpm.service: Main process exited, code=killed, status=9/KILL
+Nov 17 12:22:03 web01 systemd[1]: php8.2-fpm.service: Failed with result 'signal'.
+Nov 17 12:22:08 web01 systemd[1]: php8.2-fpm.service: Scheduled restart job, restart counter is at 1.
+Nov 17 12:22:09 web01 systemd[1]: Failed to start The PHP 8.2 FastCGI Process Manager.
+Nov 17 12:22:11 web01 systemd[1]: php8.2-fpm.service: Main process exited, code=killed, status=9/KILL
+Nov 17 12:22:12 web01 systemd[1]: php8.2-fpm.service: Failed with result 'signal'.
+Nov 17 12:22:17 web01 systemd[1]: php8.2-fpm.service: Scheduled restart job, restart counter is at 2.
+Nov 17 12:22:18 web01 systemd[1]: Failed to start The PHP 8.2 FastCGI Process Manager.
+Nov 17 12:22:20 web01 systemd[1]: php8.2-fpm.service: Main process exited, code=killed, status=9/KILL
+Nov 17 12:22:21 web01 systemd[1]: php8.2-fpm.service: Failed with result 'signal'.
+Nov 17 12:22:26 web01 systemd[1]: php8.2-fpm.service: Scheduled restart job, restart counter is at 3.
+Nov 17 12:22:27 web01 systemd[1]: Failed to start The PHP 8.2 FastCGI Process Manager.
+Nov 17 12:22:29 web01 systemd[1]: php8.2-fpm.service: Main process exited, code=killed, status=9/KILL
+Nov 17 12:22:30 web01 systemd[1]: php8.2-fpm.service: Failed with result 'signal'.
+Nov 17 12:22:35 web01 systemd[1]: php8.2-fpm.service: Scheduled restart job, restart counter is at 4.
+Nov 17 12:22:36 web01 systemd[1]: Failed to start The PHP 8.2 FastCGI Process Manager.
+Nov 17 12:23:36 web01 systemd[1]: php8.2-fpm.service: Start request repeated too quickly.
+Nov 17 12:23:36 web01 systemd[1]: php8.2-fpm.service: Failed with result 'start-limit-hit'.
