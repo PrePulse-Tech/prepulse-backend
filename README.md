@@ -56,3 +56,15 @@ If a workflow needs a secret, add it under
 Use it in a workflow as `${{ secrets.ANTHROPIC_API_KEY }}`. GitHub hides the value in logs.
 
 If a key is ever committed by mistake, **rotate it immediately** (create a new key and revoke the old one). Removing it from the code is not enough, because it stays in the git history.
+
+## Pre-commit hooks
+
+The project uses pre-commit to run `ruff check` and `ruff format` before every commit.
+Install it once, with the virtual environment active:
+
+```bash
+pip install -r requirements-dev.txt
+pre-commit install
+```
+
+If a hook reformats a file, the commit is stopped. Run `git add` again and commit again.
