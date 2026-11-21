@@ -15,9 +15,7 @@ class RuleRepository(Protocol):
         """Return rows shaped like the detection_rule table."""
 
 
-def load_rules(
-    repository: RuleRepository, registry: Mapping[str, type[Rule]]
-) -> list[Rule]:
+def load_rules(repository: RuleRepository, registry: Mapping[str, type[Rule]]) -> list[Rule]:
     """Build rule objects from the stored rules.
 
     `registry` maps a failure_type (for example "php_error") to the Rule class

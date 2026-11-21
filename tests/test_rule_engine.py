@@ -48,9 +48,7 @@ def make_rule() -> ErrorBurstRule:
 
 
 def make_line(seconds: int, level: str = "error") -> LogLine:
-    return LogLine(
-        logged_at=START + timedelta(seconds=seconds), level=level, raw_line="x"
-    )
+    return LogLine(logged_at=START + timedelta(seconds=seconds), level=level, raw_line="x")
 
 
 def test_rule_reports_a_finding_when_threshold_is_reached():
